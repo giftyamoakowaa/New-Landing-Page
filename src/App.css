@@ -551,23 +551,36 @@
     font-size: 14px;
   }
   
-  @media (max-width: 768px) {
-    nav {
-      flex-direction: column;
-      text-align: center;
+  @media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
     }
-  
-    #nav-links ul {
-      flex-direction: column;
-      gap: 10px;
+
+    .container {
+        flex-direction: column; /* Stack elements vertically */
     }
-  
-    #nav-links ul li {
-      display: block;
-      margin: 5px 0;
+
+    .nav-links {
+        display: block; /* Show menu as a block */
+        text-align: center;
     }
-  
-    #logo {
-      height: 40px; 
+
+    img {
+        max-width: 100%; /* Make images responsive */
+        height: auto;
     }
-  }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+    }
+}
