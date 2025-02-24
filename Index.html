@@ -16,7 +16,7 @@
   </body>
   <nav>
     <img id="logo" src="assets/images/WhatsApp Image 2025-02-24 at 11.09.20 AM.jpeg" alt="logo" />
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <!-- <div class="menu-toggle" onclick="toggleMenu()">☰</div> -->
     <div id="nav-links">
       <ul>
         <li><a href="#hero">Home</a></li>
@@ -38,7 +38,9 @@
           and converting cashew apples into bio-ethanol for sustainability.
         </h1>
         <button class="explore-btn" onclick="location.href='#products-services'">
-          Explore Our Services <span class="arrow">&#8594;</span>
+          <!-- Explore Our Services <span class="arrow">&#8594;</span> -->
+          <a href="#products" class="btn">Explore Our Services</a>
+
         </button>
         
       </div>
@@ -51,7 +53,8 @@
       <h1>Transforming Cashew Fruit into Sustainable Ethanol</h1>
       <h2>      Our innovative process extracts ethanol from cashew apples, providing an eco-friendly alternative to conventional fuel sources. This solution promotes sustainability, reduces waste, and supports agricultural communities.</h2>
       <button class="about-btn">
-        <span class="call-icon">📞</span> More About Us
+        <a href="#contact" class="btn">More About Us</a>
+
       </button>
     </div>
   
@@ -107,19 +110,19 @@
     
     <div class="product-container">
         <div class="product-card">
-            <img src="assets/images/1L-bottle.jpg" alt="1L Ethanol Bottle">
+            <img src="assets/images/Gifty_Amoakowaa_Generate_1litre_bottle_of_cashew_for_me_a19156d0-4d46-4faf-8d26-95d0f278895b.png" alt="1L Ethanol Bottle">
             <h3>1L Bottle</h3>
             <p>Perfect for small-scale use.</p>
         </div>
 
         <div class="product-card">
-            <img src="assets/images/5L-bottle.jpg" alt="5L Ethanol Bottle">
+            <img src="assets/images/Gifty_Amoakowaa_ethanol_made_from_cashew._Like_a_production_settin_df283f21-f102-44aa-b81f-01f1e9a42126.png" alt="5L Ethanol Bottle">
             <h3>5L Bottle</h3>
             <p>Ideal for medium-scale usage.</p>
         </div>
 
         <div class="product-card">
-            <img src="assets/images/20L-gallon.jpg" alt="20L Ethanol Gallon">
+            <img src="assets/images/images/Gifty_Amoakowaa_Generate_1litre_bottle,_5litre_bottle_and_20litre_8701c4c3-ee6c-431b-8877-58030b3dd619.png" alt="20L Ethanol Gallon">
             <h3>20L Gallon</h3>
             <p>Best for industrial and large-scale applications.</p>
         </div>
@@ -159,7 +162,7 @@
   <footer>
     <div class="footer-container">
       <div class="footer-logo">
-        <img src="assets/logo/tlaw-high-resolution-logo-transparent.png" alt="Company Logo">
+        <img src="assets/images/WhatsApp Image 2025-02-24 at 11.09.20 AM.jpeg" alt="Company Logo">
       </div>
       
       <div class="footer-links">
@@ -167,7 +170,7 @@
           <li><a href="#hero">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#innovator-profile">Company</a></li>
-          <li><a href="#products-services">Services</a></li>
+          <li><a href="#products">Services</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -188,6 +191,15 @@
   <!-- FontAwesome for Icons -->
   <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
   
+  document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const navLinks = document.querySelector("#nav-links");
+
+    mobileMenu.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
+});
+
   
   
   
