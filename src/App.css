@@ -101,6 +101,8 @@
       text-align: center;
       padding: 80px 10px;
     }
+
+    
     
     
     .overlay {
@@ -115,11 +117,12 @@
     
     .hero-content {
       color: white;
-      max-width: 70%;
+      max-width: 90%;
+      font-size: 14px;
     }
     
     .hero-content h1 {
-      font-size: 2.rem;
+      font-size: 20px;
       line-height: 1.5;
       font-weight: bold;
     }
@@ -147,6 +150,23 @@
       font-size: 1.2rem;
     }
     
+    @media (max-width: 768px) {
+      #hero {
+          height: 100vh;
+          padding: 20px;
+      }
+  
+      .hero-content {
+          max-width: 90%;
+          font-size: 14px;
+      }
+  
+      .hero-content h1 {
+          font-size: 20px;
+      }
+  }
+
+  
    /* About Section */
 /* About Section */
 /* About Section */
@@ -294,6 +314,18 @@
     height: 250px;
   }
 }
+
+@media (max-width: 768px) {
+  .slider-container {
+      width: 90%;
+      margin: auto;
+  }
+
+  .flip-card img {
+      width: 100%;
+  }
+}
+
 
 
     
@@ -467,6 +499,19 @@
   }
 }
 
+@media (max-width: 768px) {
+  .product-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .product-card {
+      width: 80%;
+      margin-bottom: 20px;
+  }
+}
+
   
   /* Contact Details */
   /* Contact Section */
@@ -579,6 +624,18 @@
       width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .contact-container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .contact-form {
+      width: 100%;
+  }
+}
+
 
   footer {
     background-color: #222;
