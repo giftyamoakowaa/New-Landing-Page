@@ -86,27 +86,31 @@
   <section id="innovator-profile">
     <h2>Innovator’s Profile</h2>
     <div class="profile-container">
-      <!-- Innovator's Image -->
-      <div class="profile-image">
-        <img src="assets/images/Eric Yankey.jpeg" alt="Eric Yankey">
-      </div>
-  
-      <!-- Separator Line -->
-      <div class="separator"></div>
-  
-      <!-- Innovator's Description -->
-      <div class="profile-details">
-        <h3>Eric Yankey</h3>
-        <p>
-          A male entrepreneur from Berekum West, Bono Region who has developed an
-          innovative solution in the Agricultural sector to address the issue of post-harvest
-          waste in the cashew industry. Cashew apples are typically left to go to waste in
-          many African cashew-producing countries due to factors like limited knowledge,
-          perishability, and lack of processing initiatives.
-        </p>
-      </div>
+        <!-- Innovator's Image -->
+        <div class="profile-image">
+            <img src="assets/images/Eric Yankey.jpeg" alt="Eric Yankey">
+        </div>
+
+        <!-- Separator Line -->
+        <div class="separator"></div>
+
+        <!-- Innovator's Description -->
+        <div class="profile-details">
+            <h3>Eric Yankey</h3>
+            <p>
+                A male entrepreneur from Berekum West, Bono Region who has developed an
+                innovative solution in the Agricultural sector to address the issue of post-harvest
+                waste in the cashew industry. <span id="more-text" style="display: none;">
+                Cashew apples are typically left to go to waste in
+                many African cashew-producing countries due to factors like limited knowledge,
+                perishability, and lack of processing initiatives.
+                </span>
+            </p>
+            <button id="view-more-btn">View More</button>
+        </div>
     </div>
-  </section>
+</section>
+
   
 
   <section id="products">
@@ -211,7 +215,21 @@
   </script>
   
   
-  
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    const viewMoreBtn = document.getElementById("view-more-btn");
+    const moreText = document.getElementById("more-text");
+
+    viewMoreBtn.addEventListener("click", function () {
+        if (moreText.style.display === "none") {
+            moreText.style.display = "inline";
+            viewMoreBtn.textContent = "View Less";
+        } else {
+            moreText.style.display = "none";
+            viewMoreBtn.textContent = "View More";
+        }
+    });
+});
+</script>
   
 </body>
 </html>
