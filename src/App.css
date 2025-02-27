@@ -20,7 +20,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: white;
+  background-color: azure;
   z-index: 1000;
 }
 
@@ -90,81 +90,117 @@
 }
 
   
-    #hero {
-      position: relative;
-      width: 100%;
-      height: 120vh;
-      background: url('/assets/images/images/cashew-2197621_960_720.jpg') no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 10px;
-    }
+#hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  perspective: 1200px; /* Adds depth for flipping */
+}
 
-    
-    
-    
-    .overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* Adds a dark overlay for better readability */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .hero-content {
-      color: white;
-      max-width: 90%;
-      font-size: 14px;
-    }
-    
-    .hero-content h1 {
-      font-size: 20px;
-      line-height: 1.5;
-      font-weight: bold;
-    }
-    
-    .explore-btn {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: #ffcc00;
-      color: #333;
-      padding: 12px 20px;
-      border: none;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: 0.3s;
-      margin-top: 20px;
-    }
-    
-    .explore-btn:hover {
-      background: #e6b800;
-    }
-    
-    .arrow {
-      font-size: 1.2rem;
-    }
-    
-    @media (max-width: 768px) {
-      #hero {
-          height: 100vh;
-          padding: 20px;
-      }
-  
-      .hero-content {
-          max-width: 90%;
-          font-size: 14px;
-      }
-  
-      .hero-content h1 {
-          font-size: 20px;
-      }
+/* Slider Container */
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+/* Individual Slides */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: rotateY(90deg);
+  transform-origin: right;
+  transition: transform 1.2s linear, opacity 1.2s ease-in-out;
+}
+
+/* Active Slide */
+.slide.active {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+/* Overlay for better text readability */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Hero Content */
+.hero-content {
+  color: white;
+  max-width: 80%;
+  font-size: 16px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-content h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.explore-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(90deg, #ffcc00, #ff8800); /* Gradient effect */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px; /* Rounded for sleekness */
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(255, 136, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+
+.explore-btn:hover {
+  background: linear-gradient(90deg, #ff8800, #ffcc00);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(255, 136, 0, 0.5);
+}
+
+.explore-btn .arrow {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease-in-out;
+  color: darkgreen;
+}
+
+.explore-btn:hover .arrow {
+  transform: translateX(5px); /* Subtle movement effect */
+}
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
   }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-content h1 {
+      font-size: 24px;
+  }
+}
 
   
 /* About Section */
@@ -172,158 +208,94 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 50px;
-  background: #f5f5f5;
-  height: 100vh;
+  padding: 80px 10%;
+  background: whitesmoke;
 }
 
-/* About Content */
 .about-content {
+  flex: 1;
   max-width: 50%;
 }
 
 .about-content h1 {
-  font-size: 2.5rem;
+  font-size: 36px;
   font-weight: bold;
   color: #333;
 }
 
 .about-content h2 {
-  font-size: 1.2rem;
-  font-weight: lighter;
-  color: #555;
-  margin-top: 10px;
+  font-size: 18px;
+  color: #666;
+  margin: 20px 0;
+  line-height: 1.6;
 }
 
 .about-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #ff9800;
-  color: white;
+  display: inline-block;
+  background: #ffcc00;
   padding: 12px 20px;
+  border-radius: 8px;
   border: none;
   font-size: 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s;
-  margin-top: 20px;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+.about-btn a {
+  text-decoration: none;
+  color: #333;
 }
 
 .about-btn:hover {
-  background: #e68900;
+  background: #e6b800;
 }
 
-/* Flip Slider */
-.slider-container {
-  width: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  perspective: 1000px;
-}
-
-/* Flip Card */
-.flip-slider {
-  width: 90%;
-  height: 280px;
-  border-radius: 100%;
-}
-
-.flip-card {
-  width: 80%;
-  height: 250px;
+/* Stacked Card Layout */
+.card-container {
   position: relative;
-  transform-style: preserve-3d;
-  animation: flip-animation 10s infinite;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 420px; /* Ensures proper spacing */
 }
 
-/* Front, Middle & Back Images */
-.flip-card-inner {
-  width: 100%;
-  height: 100%;
+.card {
   position: absolute;
-  transition: transform 0.5s;
-  transform-style:preserve-3d;
-}
-
-.flip-card-front,
-.flip-card-middle,
-.flip-card-back {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  backface-visibility: hidden;
-  border-radius: 20px;
-}
-
-.flip-card-front img,
-.flip-card-middle img,
-.flip-card-back img {
-  width: 100%;
-  height: 150%;
-  object-fit: cover;
+  width: 320px;
+  height: 400px;
   border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* Flip Animation */
-.flip-card-middle {
-  transform: rotateY(120deg);
+/* Stacked Overlapping Effect */
+.card:nth-child(1) {
+  transform: rotate(-8deg) translateX(-80px);
+  z-index: 1;
 }
 
-.flip-card-back {
-  transform: rotateY(240deg);
+.card:nth-child(2) {
+  transform: rotate(-3deg) translateX(-40px);
+  z-index: 2;
+}
+.card:nth-child(3) {
+  transform: rotate(2deg) translateX(0px);
+  z-index: 3;
+}
+/* Hover Effect */
+.card:hover {
+  transform: scale(1.08) !important;
+  z-index: 4; /* Ensures the hovered card comes to the top */
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3);
 }
 
-@keyframes flip-animation {
-  0% { transform: rotateY(0deg); }
-  33% { transform: rotateY(120deg); }
-  66% { transform: rotateY(240deg); }
-  100% { transform: rotateY(360deg); }
-}
-
-/* 🌟 Mobile Responsiveness */
-@media (max-width: 768px) {
-  #about {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    height: auto;
-    padding: 30px;
-  }
-
-  .about-content {
-    max-width: 100%;
-  }
-
-  .about-content h1 {
-    font-size: 2rem;
-  }
-
-  .about-content h2 {
-    font-size: 1rem;
-  }
-
-  .slider-container {
-    width: 80%;
-    margin-top: 20px;
-  }
-
-  .flip-card {
-    height: 200px;
-  }
-}
-
-@media (max-width: 768px) {
-  .slider-container {
-      width: 90%;
-      margin: auto;
-  }
-
-  .flip-card img {
-      width: 100%;
-  }
-}
 
 /* Innovator Profile Section */
 #innovator-profile {
@@ -421,7 +393,7 @@
     display: block;
     text-align: center;
     font-size: 14px;
-    color: blue;
+    color:cyan;
     cursor: pointer;
 }
 }
@@ -498,7 +470,7 @@
 }
 
 .contact-form button {
-  background: #00ffdd;
+  background: #a0f5ea;
   color: white;
   padding: 12px;
   border: none;
@@ -509,7 +481,7 @@
 }
 
 .contact-form button:hover {
-  background: #0056b3;
+  background: #a4ddd4;
 }
 
 /* Responsive Design */
@@ -660,54 +632,96 @@ section {
 }
 
 
+/* Product Section */
 #products {
   text-align: center;
-  padding: 20px;
-  background-color:whitesmoke;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e0e4e7 100%);
 }
 
 .product-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  padding: 10px;
+  gap: 30px;
+  padding: 20px;
 }
 
+/* Product Cards */
 .product-card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  max-width: 300px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  width: 320px;
   text-align: center;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card Hover Effect */
+.product-card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Product Images */
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
   transition: transform 0.3s ease-in-out;
 }
 
-.product-card:hover {
-  transform: scale(1.05);
+/* Image Hover Zoom */
+.product-card:hover img {
+  transform: scale(1.08);
 }
 
-.product-card img {
-  width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
+/* Product Text */
 .product-card h3 {
-  font-size: 18px;
-  margin: 10px 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  margin: 15px 0 10px;
 }
 
 .product-card p {
-  font-size: 14px;
-  color: #555;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
 }
 
+/* Modern Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg,#e1fca4, #bcd1a3);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #74b300, #003d80);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .product-container {
       flex-direction: column;
       align-items: center;
+  }
+
+  .product-card {
+      width: 90%;
   }
 }
