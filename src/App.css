@@ -331,22 +331,37 @@ nav {
 /* Innovator Profile Section */
 #innovator-profile {
   text-align: center;
-  padding: 80px 20px;  /* Increased padding */
-  background: #f8f8f8;
-  min-height: 100vh; /* Ensures the section has height */
+  padding: 80px 5%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(240, 240, 240, 0.8));
+  min-height: 100vh; 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(8px);
 }
 
 /* Profile Heading */
 .profile-heading {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: bold;
-  color: #333;
-  text-align: center;
-  margin-bottom: 30px; /* Space between heading and content */
+  color: #222;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.profile-heading::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: cyan;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
 }
 
 /* Profile Container */
@@ -355,51 +370,81 @@ nav {
   align-items: center;
   justify-content: center;
   max-width: 1000px;
-  height: 400px;  /* Increased height */
+  min-height: 400px;
   margin: auto;
-  background: rgb(164, 224, 211);
   padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  background: rgba(250, 226, 89, 0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   gap: 30px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid goldenrod;
+}
+
+/* Floating Glows */
+.profile-container::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgba(3, 54, 54, 0.3);
+  border-radius: 50%;
+  top: -40px;
+  left: -40px;
+  filter: blur(20px);
+}
+
+.profile-container::after {
+  content: "";
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: goldenrod;
+  border-radius: 50%;
+  bottom: -40px;
+  right: -40px;
+  /* filter: blur(1px); */
 }
 
 /* Profile Image */
 .profile-image img {
-  width: 250px;
-  height: 250px;
+  width: 260px;
+  height: 260px;
   object-fit: cover;
-  border-radius: 12px;
-  display: block;
+  border-radius: 18px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Zoom */
+.profile-container:hover .profile-image img {
+  transform: scale(1.05);
 }
 
 /* Separator Line */
 .separator {
-  width: 3px;
-  height: 80%; /* Takes up most of the section */
-  background-color: #cefcf9;
+  width: 4px;
+  height: 80%;
+  background-color: rgba(255, 238, 0, 0.5);
+  border-radius: 2px;
 }
 
 /* Profile Details */
 .profile-details {
   max-width: 500px;
   text-align: left;
+  color: #c5a61e;
 }
 
 .profile-details p {
   font-size: 18px;
-  color: #444;
   line-height: 1.8;
+  color: #110404;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .innovator-profile {
-    max-height: 200px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
   .profile-container {
     flex-direction: column;
     text-align: center;
@@ -420,16 +465,15 @@ nav {
   .profile-details {
     text-align: center;
   }
-  .show-more {
+
+  /* .show-more {
     display: block;
     text-align: center;
     font-size: 14px;
-    color:cyan;
+    color: cyan;
     cursor: pointer;
+  } */
 }
-}
-
-
 
 #contact {
   background-color: #f8f9fa;
@@ -495,14 +539,14 @@ nav {
   width: 100%;
   padding: 12px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #dac35f;
   border-radius: 5px;
   font-size: 16px;
 }
 
 .contact-form button {
   background: #a0f5ea;
-  color: white;
+  color:goldenrod;
   padding: 12px;
   border: none;
   font-size: 16px;
@@ -666,7 +710,7 @@ section {
 /* Product Section */
 #products {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 5%;
   background: linear-gradient(135deg, #f8f9fa 0%, #e0e4e7 100%);
 }
 
@@ -680,22 +724,43 @@ section {
 
 /* Product Cards */
 .product-card {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 20px;
-  width: 320px;
+  background: rgba(255, 215, 0, 0.2); /* Subtle golden tint */
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 25px;
+  width: 300px;
   text-align: center;
   transition: all 0.4s ease-in-out;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(255, 215, 0, 0.3);
   position: relative;
   overflow: hidden;
 }
 
+/* Floating Effect */
+.product-card::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 215, 0, 0.4);
+  border-radius: 50%;
+  top: -30px;
+  right: -30px;
+  transition: 0.5s ease-in-out;
+  filter: blur(40px);
+}
+
+.product-card:hover::before {
+  width: 140px;
+  height: 140px;
+  top: -50px;
+  right: -50px;
+}
+
 /* Card Hover Effect */
 .product-card:hover {
-  transform: scale(1.07);
+  transform: scale(1.07) rotate(2deg);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
@@ -704,27 +769,60 @@ section {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: 12px;
   transition: transform 0.3s ease-in-out;
 }
 
 /* Image Hover Zoom */
 .product-card:hover img {
-  transform: scale(1.08);
+  transform: scale(1.1);
+  border-radius: 15px;
 }
 
 /* Product Text */
 .product-card h3 {
   font-size: 22px;
-  font-weight: 600;
-  color: #333;
+  font-weight: bold;
+  color: #222;
   margin: 15px 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .product-card p {
   font-size: 16px;
-  color: #666;
+  color: #555;
   margin-bottom: 15px;
+  font-style: italic;
+}
+
+/* Add CTA Button */
+.product-card .btn {
+  display: inline-block;
+  background: gold;
+  color: #222;
+  padding: 10px 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.product-card .btn:hover {
+  background: #ffcc00;
+  transform: scale(1.1);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .product-card {
+    width: 260px;
+    padding: 20px;
+  }
+
+  .product-card img {
+    height: 180px;
+  }
 }
 
 /* Modern Buttons */
