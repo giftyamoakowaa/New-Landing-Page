@@ -301,26 +301,30 @@ nav {
   }
 
   .card-container {
-    height: 300px; /* Reduce height for smaller screens */
+    height: 250px; /* Further reduce height */
+    display: flex;
+    justify-content: flex-end; /* Keep images aligned to the right */
+    margin-left: auto; /* Push the images to the right */
   }
 
   .card {
-    width: 220px; /* Reduce card width */
-    height: 280px; /* Reduce card height */
+    width: 180px; /* Reduce card width */
+    height: 240px; /* Reduce card height */
   }
 
   .card:nth-child(1) {
-    transform: rotate(-5deg) translateX(-40px);
+    transform: rotate(-4deg) translateX(-30px);
   }
 
   .card:nth-child(2) {
-    transform: rotate(-2deg) translateX(-20px);
+    transform: rotate(-2deg) translateX(-15px);
   }
 
   .card:nth-child(3) {
     transform: rotate(1deg) translateX(0px);
   }
 }
+
 
 
 
