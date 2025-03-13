@@ -3,7 +3,14 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
+  @media (min-width: 768px) {
+    .col-sm-6 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
   body {
     overflow-x: hidden;
     width: 100%;
