@@ -357,31 +357,37 @@ nav a.active:hover {
   font-style:inherit;
   flex-grow: inherit;
 }
-@media (max-width: 768px) {
-  .about-text {
-    font-size: 18px; 
-    line-height: 1.5; 
-    max-height: 500px; /* Limit height */
-    overflow-y: auto; /* Enable scrolling if content is too long */
-  }
-
+@media (max-width: 768px) {  
   .about-section {
     display: flex;
-    flex-direction: column-reverse; /* Moves Mission/Vision up */
+    flex-direction: column; /* Stack items vertically */
     align-items: center;
-    text-align: center; /* Center text for better layout */
+    text-align: center;
+    padding: 20px;
+    height: 12vh;
+  }
+
+  .about-text {
+    font-size: 18px; /* Reduce font size for better readability */
+    max-width: 90%; /* Ensure text doesn't stretch too wide */
+    line-height: 0.5; /* Improve spacing */
+
+  }
+
+  .about-box p {
+    font-size: 10px;
+    color: #fff;
+    line-height: 0.5;
+    font-family:sans-serif;
+    font-style:inherit;
+    flex-grow: inherit;
+  }
+
+  .mission-vision {
+    margin-top: 20px; /* Add space between sections */
+    width: 100%;
   }
 }
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    gap: 30px;
-  }
-}
-
 
 
 /* Innovator Profile Section */
@@ -389,13 +395,13 @@ nav a.active:hover {
   text-align: center;
   padding: 80px 5%;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(240, 240, 240, 0.8));
-  min-height: 100vh; 
+  height:100vh; 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(8px);
-  margin-top: 140px;
+  margin-top: 230px;
 }
 
 /* Profile Heading */
