@@ -281,10 +281,12 @@ nav a.active:hover {
   font-weight: bold;
   text-transform: uppercase;
   background: linear-gradient(45deg, #FFD700, #FFC300, #FFB000);
-  -webkit-background-clip: text;
+  background-clip: text; /* Standard property */
+  -webkit-background-clip: text; /* WebKit-specific */
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
+
 
 .about-subtext {
   font-size: 20px;
