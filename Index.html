@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>Monger Foods</title>
     <link rel="stylesheet" href="src/App.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -41,7 +41,6 @@
     <div class="slider">
       <div class="slide active" style="background-image: url('/assets/images/cashew\ hero\ new.jpeg');"></div>
       <div class="slide" style="background-image: url('/assets/images/man\ Hero\ new.jpeg');"></div>
-      <div class="slide" style="background-image: url('/assets/images/People\ Hero\ New.jpeg');"></div>
     </div>
   
     <div class="overlay">
@@ -111,63 +110,33 @@
 
   
 
-<<section id="products">
-  <h2>Our Products</h2>
+<section id="products">
+  <h2 class="section-title">Our Products</h2>
 
   <!-- Ethanol Section -->
   <div class="product-category">
-      <h3>Bio-Ethanol</h3>
-      <p>Eco-friendly ethanol derived from cashew apples, available in various sizes.</p>
-      <div class="product-container">
+      <h3 class="category-title">Econol</h3>
+      <p class="category-description">
+          Eco-friendly ethanol derived from cashew apples, available in various sizes.
+      </p>
+      
+      <div class="product-grid">
           <div class="product-card">
-              <img src="assets/images/1 litre.jpg" alt="1L Ethanol">
+              <img src="assets/images/1litre new.jpeg" alt="1L Ethanol">
               <h4>1 Litre</h4>
           </div>
           <div class="product-card">
-              <img src="assets/images/5 litre.jpg" alt="5L Ethanol">
+              <img src="assets/images/5 litres.jpeg" alt="5L Ethanol">
               <h4>5 Litres</h4>
           </div>
           <div class="product-card">
-              <img src="assets/images/20 litre.jpg" alt="20L Ethanol">
+              <img src="assets/images/gallon.jpeg" alt="20L Ethanol">
               <h4>20 Litres</h4>
           </div>
       </div>
   </div>
-
-  <!-- Shrimps Section -->
-  <div class="product-category">
-      <h3>Fresh Shrimps</h3>
-      <p>High-quality, fresh, and nutritious shrimps sourced sustainably.</p>
-      <div class="product-container">
-          <div class="product-card">
-              <img src="assets/images/shrimp 1.jpg" alt="Shrimps">
-          </div>
-          <div class="product-card">
-              <img src="assets/images/shrimp 2.jpg" alt="Shrimps">
-          </div>
-          <div class="product-card">
-              <img src="assets/images/Herring poder 4.jpg" alt="Shrimps">
-          </div>
-      </div>
-  </div>
-
-  <!-- Biotech (Coming Soon) Section -->
-  <div class="product-category coming-soon">
-      <h3>Biotech Solutions (Coming Soon)</h3>
-      <p>Innovative biotech solutions for a sustainable future.</p>
-      <div class="product-container">
-          <div class="product-card">
-              <img src="assets/images/bio tech.jpg" alt="Biotech" class="blur">
-          </div>
-          <div class="product-card">
-              <img src="assets/images/cashew milk.jpg" alt="Biotech" class="blur">
-          </div>
-          <div class="product-card">
-              <img src="assets/images/images/researcher.jpg" alt="Biotech" class="blur">
-          </div>
-      </div>
-  </div>
 </section>
+
 
 
 
@@ -281,6 +250,33 @@
 });
 
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+     const sections = document.querySelectorAll("section");
+     const navLinks = document.querySelectorAll("nav a");
+  
+     window.addEventListener("scroll", () => {
+       let current = "";
+  
+       sections.forEach((section) => {
+         const sectionTop = section.offsetTop;
+         const sectionHeight = section.clientHeight;
+         if (pageYOffset >= sectionTop - 50) {
+           current = section.getAttribute("id");
+         }
+       });
+  
+       navLinks.forEach((link) => {
+         link.classList.remove("active");
+         if (link.getAttribute("href").includes(current)) {
+           link.classList.add("active");
+         }
+       });
+     });
+   });
+  </script>
+  
   
 </body>
 </html>
