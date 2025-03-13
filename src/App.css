@@ -357,7 +357,7 @@ nav a.active:hover {
   font-style:inherit;
   flex-grow: inherit;
 }
-@media (max-width: 768px) {  
+@media (max-width: 400px) {  
   .about-section {
     display: flex;
     flex-direction: column; /* Stack items vertically */
