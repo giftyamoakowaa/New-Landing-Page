@@ -279,7 +279,7 @@ nav a.active:hover {
 #about {
   text-align: center;
   padding: 80px 5%;
-  background: #f9f9f9;
+  background: white;
   height: 110vh;
 }
 
@@ -467,7 +467,7 @@ nav a.active:hover {
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(8px);
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 /* Profile Heading */
