@@ -301,6 +301,10 @@ nav a.active:hover {
   .hero-content {
     gap: 15px; /* Reduce spacing between elements */
   }
+
+  .container {
+    max-height: 80vh;
+  }
 }
 
 
@@ -489,6 +493,9 @@ nav a.active:hover {
   
   .about-video, .about-image {
     max-width: 90%;
+  }
+  .container {
+    max-height: 80vh;
   }
 }
 
