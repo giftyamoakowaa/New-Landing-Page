@@ -441,6 +441,18 @@ nav a.active:hover {
   height: 15vh;
 }
 
+@media (max-width: 768px) {
+  .about-section img, 
+  .about-section video {
+    width: 100%;  /* Make them responsive */
+    max-height: 250px; /* Restrict height */
+    object-fit: cover; /* Prevent distortion */
+  }
+}
+#about {
+  margin-bottom: 50px; /* Create space before next section */
+}
+
 }
 
 .about-overlay {
@@ -660,6 +672,9 @@ nav a.active:hover {
 
   .container {
     max-height: 80vh;
+  }
+  #innovator-profile {
+    margin-top: 50px; /* Push it down */
   }
 
 }
