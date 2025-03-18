@@ -6,9 +6,9 @@
   @media (min-width: 768px) {
     .col-sm-6 {
         -webkit-box-flex: 0;
-        -ms-flex: 0 0 50%;
+        -ms-flex: 0 0 30%;
         flex: 0 0 50%;
-        max-width: 50%;
+        max-width: 30%;
     }
 }
   body {
@@ -274,6 +274,37 @@ nav a.active:hover {
   }
 }
 
+@media (max-width: 768px) {  
+  .hero {
+    height: 40vh; /* Reduce height */
+    padding: 50px 20px; /* Adjust padding */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: 18px; /* Decrease text size */
+  }
+
+  .hero-subtext {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .hero-image {
+    max-width: 60%; /* Reduce image size */
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    gap: 15px; /* Reduce spacing between elements */
+  }
+}
+
+
+
   
 /* About Section */
 #about {
@@ -398,6 +429,14 @@ nav a.active:hover {
     margin-top: 20px; /* Add space between sections */
     width: 80%;
   }
+
+.about-container{
+  height: 18vh;
+}
+.about-box{
+  height: 15vh;
+}
+
 }
 
 .about-overlay {
@@ -607,13 +646,15 @@ nav a.active:hover {
     text-align: center;
   }
 
-  /* .show-more {
-    display: block;
-    text-align: center;
-    font-size: 14px;
-    color: cyan;
-    cursor: pointer;
-  } */
+  #innovator-profile {
+    padding: 30px 10px; /* Reduce vertical padding */
+    margin-bottom: 20px; /* Reduce bottom margin */
+  }
+
+  .container {
+    max-height: 80vh;
+  }
+
 }
 
 #contact {
@@ -726,6 +767,15 @@ nav a.active:hover {
       padding: 12px;
       border: none;
       font-size: 16px;
+  }
+
+  #contact {
+    padding: 30px 10px;
+    margin-top: 10px;
+  }
+  
+  .container {
+    max-height: 80vh;
   }
 }
 
