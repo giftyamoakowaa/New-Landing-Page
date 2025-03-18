@@ -99,7 +99,7 @@ nav a.active:hover {
     position: absolute;
     top: 60px;
     left: 0;
-    width: 100%;
+    width: 70%;
     background-color: white;
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -125,7 +125,7 @@ nav a.active:hover {
     position: absolute;
     top: 60px; /* Below navbar */
     left: 0;
-    width: 100%;
+    width: 60%;
     background-color: white;
     text-align: center;
   }
@@ -270,7 +270,7 @@ nav a.active:hover {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .hero-content h1 {
-      font-size: 24px;
+      font-size: 12px;
   }
 }
 
@@ -375,12 +375,12 @@ nav a.active:hover {
     align-items: center;
     text-align: center;
     padding: 20px;
-    height: 12vh;
+    height: 8vh;
   }
 
   .about-text {
-    font-size: 18px; /* Reduce font size for better readability */
-    max-width: 90%; /* Ensure text doesn't stretch too wide */
+    font-size: 9px; /* Reduce font size for better readability */
+    max-width: 70%; /* Ensure text doesn't stretch too wide */
     line-height: 0.5; /* Improve spacing */
 
   }
@@ -396,7 +396,7 @@ nav a.active:hover {
 
   .mission-vision {
     margin-top: 20px; /* Add space between sections */
-    width: 100%;
+    width: 80%;
   }
 }
 
@@ -445,7 +445,7 @@ nav a.active:hover {
     left: 0;
     top: 0;
     align-items: center;
-    width: 100%;
+    width: 80%;
   }
   
   .about-video, .about-image {
@@ -594,13 +594,13 @@ nav a.active:hover {
   }
 
   .profile-image img {
-    width: 200px;
-    height: 200px;
+    width: 80px;
+    height: 80px;
   }
 
   .separator {
-    width: 80%;
-    height: 2px;
+    width: 50%;
+    height: 0.5px;
   }
 
   .profile-details {
